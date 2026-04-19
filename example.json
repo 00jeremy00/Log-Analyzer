@@ -1,22 +1,39 @@
-{"timestamp":"2026-04-15T12:00:01","level":"INFO","service":"InventoryAPI","event":"product_created","method":"POST","endpoint":"/products","product_num":1001,"product_name":"French Fries"}
-{"timestamp":"2026-04-15T12:00:05","level":"INFO","service":"InventoryAPI","event":"product_created","method":"POST","endpoint":"/products","product_num":1002,"product_name":"Cheddar Cheese"}
+{"timestamp":"2026-04-15T12:00:01","level":"INFO","service":"InventoryAPI","event":"product_created","endpoint":"/products","product_num":1001,"product_name":"French Fries","method":"POST"}
+{"timestamp":"2026-04-15T12:00:05","level":"INFO","service":"InventoryAPI","event":"product_created","endpoint":"/products","product_num":1002,"product_name":"Cheddar Cheese","method":"POST"}
+{"timestamp":"2026-04-15T12:00:08","level":"INFO","service":"InventoryAPI","event":"product_created","endpoint":"/products","product_num":1003,"product_name":"Chicken Breast","method":"POST"}
 
-{"timestamp":"2026-04-15T12:01:10","level":"INFO","service":"InventoryAPI","event":"inventory_updated","method":"POST","endpoint":"/inventory/receive","product_num":1001,"quantity_change":50}
-{"timestamp":"2026-04-15T12:01:12","level":"INFO","service":"InventoryAPI","event":"inventory_updated","method":"POST","endpoint":"/inventory/receive","product_num":1002,"quantity_change":30}
+{"timestamp":"2026-04-15T12:01:10","level":"INFO","service":"InventoryAPI","event":"inventory_updated","endpoint":"/inventory/receive","product_num":1001,"quantity_change":50.0,"method":"POST"}
+{"timestamp":"2026-04-15T12:01:12","level":"INFO","service":"InventoryAPI","event":"inventory_updated","endpoint":"/inventory/receive","product_num":1002,"quantity_change":30.0,"method":"POST"}
+{"timestamp":"2026-04-15T12:01:15","level":"INFO","service":"InventoryAPI","event":"inventory_updated","endpoint":"/inventory/receive","product_num":1003,"quantity_change":40.5,"method":"POST"}
 
-{"timestamp":"2026-04-15T12:02:20","level":"INFO","service":"InventoryAPI","event":"transaction_created","method":"POST","endpoint":"/transactions","transaction_num":2001,"product_num":1001,"quantity":5,"transaction_type":"USE"}
-{"timestamp":"2026-04-15T12:02:21","level":"INFO","service":"InventoryAPI","event":"transaction_approved","method":"POST","endpoint":"/transactions/approve","transaction_num":2001}
+{"timestamp":"2026-04-15T12:02:20","level":"INFO","service":"InventoryAPI","event":"transaction_created","endpoint":"/transactions","transaction_num":2001,"product_num":1001,"method":"POST"}
+{"timestamp":"2026-04-15T12:02:21","level":"INFO","service":"InventoryAPI","event":"transaction_approved","endpoint":"/transactions/approve","transaction_num":2001,"method":"POST"}
 
-{"timestamp":"2026-04-15T12:03:10","level":"WARN","service":"InventoryAPI","event":"low_inventory_warning","method":"GET","endpoint":"/inventory","product_num":1002,"remaining_quantity":5}
+{"timestamp":"2026-04-15T12:03:10","level":"WARN","service":"InventoryAPI","event":"low_inventory_warning","endpoint":"/inventory","product_num":1002,"method":"GET"}
 
-{"timestamp":"2026-04-15T12:04:00","level":"INFO","service":"InventoryAPI","event":"transaction_created","method":"POST","endpoint":"/transactions","transaction_num":2002,"product_num":1002,"quantity":10,"transaction_type":"USE"}
-{"timestamp":"2026-04-15T12:04:01","level":"ERROR","service":"InventoryAPI","event":"transaction_failed","method":"POST","endpoint":"/transactions/approve","transaction_num":2002,"error":"Insufficient inventory"}
+{"timestamp":"2026-04-15T12:04:00","level":"INFO","service":"InventoryAPI","event":"transaction_created","endpoint":"/transactions","transaction_num":2002,"product_num":1002,"method":"POST"}
+{"timestamp":"2026-04-15T12:04:01","level":"ERROR","service":"InventoryAPI","event":"transaction_failed","endpoint":"/transactions/approve","transaction_num":2002,"product_num":1002,"error":"Insufficient inventory","method":"POST"}
 
-{"timestamp":"2026-04-15T12:05:30","level":"INFO","service":"InventoryAPI","event":"inventory_updated","method":"POST","endpoint":"/inventory/adjust","product_num":1002,"quantity_change":20}
+{"timestamp":"2026-04-15T12:05:30","level":"INFO","service":"InventoryAPI","event":"inventory_updated","endpoint":"/inventory/adjust","product_num":1002,"quantity_change":20.0,"method":"PUT"}
 
-{"timestamp":"2026-04-15T12:06:45","level":"ERROR","service":"InventoryAPI","event":"db_connection_failed","method":"GET","endpoint":"/products","error":"Database timeout"}
+{"timestamp":"2026-04-15T12:06:45","level":"ERROR","service":"InventoryAPI","event":"db_connection_failed","endpoint":"/products","error":"Database timeout","method":"GET"}
 
-{"timestamp":"2026-04-15T12:07:10","level":"INFO","service":"InventoryAPI","event":"transaction_created","method":"POST","endpoint":"/transactions","transaction_num":2003,"product_num":1001,"quantity":3,"transaction_type":"WASTE"}
-{"timestamp":"2026-04-15T12:07:12","level":"INFO","service":"InventoryAPI","event":"transaction_approved","method":"POST","endpoint":"/transactions/approve","transaction_num":2003}
+{"timestamp":"2026-04-15T12:07:10","level":"INFO","service":"InventoryAPI","event":"transaction_created","endpoint":"/transactions","transaction_num":2003,"product_num":1001,"method":"POST"}
+{"timestamp":"2026-04-15T12:07:12","level":"INFO","service":"InventoryAPI","event":"transaction_approved","endpoint":"/transactions/approve","transaction_num":2003,"method":"POST"}
 
-{"timestamp":"2026-04-15T12:08:00","level":"WARN","service":"InventoryAPI","event":"high_error_rate","method":"SYSTEM","endpoint":"internal_monitor","error_count":5}
+{"timestamp":"2026-04-15T12:08:00","level":"WARN","service":"InventoryAPI","event":"high_error_rate","endpoint":"/monitor","method":"GET"}
+
+{"timestamp":"2026-04-15T12:09:15","level":"INFO","service":"InventoryAPI","event":"inventory_checked","endpoint":"/inventory","product_num":1001,"method":"GET"}
+{"timestamp":"2026-04-15T12:09:20","level":"INFO","service":"InventoryAPI","event":"inventory_checked","endpoint":"/inventory","product_num":1002,"method":"GET"}
+{"timestamp":"2026-04-15T12:09:22","level":"INFO","service":"InventoryAPI","event":"inventory_checked","endpoint":"/inventory","product_num":1003,"method":"GET"}
+
+{"timestamp":"2026-04-15T12:10:05","level":"ERROR","service":"InventoryAPI","event":"invalid_request","endpoint":"/transactions","error":"Missing product_num","method":"POST"}
+
+{"timestamp":"2026-04-15T12:11:30","level":"WARN","service":"InventoryAPI","event":"slow_response","endpoint":"/transactions","method":"GET"}
+
+{"timestamp":"2026-04-15T12:12:10","level":"INFO","service":"InventoryAPI","event":"transaction_created","endpoint":"/transactions","transaction_num":2004,"product_num":1003,"method":"POST"}
+{"timestamp":"2026-04-15T12:12:12","level":"ERROR","service":"InventoryAPI","event":"transaction_failed","endpoint":"/transactions/approve","transaction_num":2004,"product_num":1003,"error":"Approval service unavailable","method":"POST"}
+
+{"timestamp":"2026-04-15T12:13:00","level":"INFO","service":"InventoryAPI","event":"inventory_updated","endpoint":"/inventory/waste","product_num":1001,"quantity_change":-3.0,"method":"POST"}
+
+{"timestamp":"2026-04-15T12:14:05","level":"INFO","service":"InventoryAPI","event":"product_deleted","endpoint":"/products/1003","product_num":1003,"method":"DELETE"}
